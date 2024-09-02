@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalcController {
     private final CalcService calcService;
 
+    @GetMapping
+    public String hello() {
+        return "Hello World!";
+    }
+
     @GetMapping("add")
     public int add(@RequestParam(value = "a") int a, @RequestParam(value = "b") int b) {
         return calcService.add(a, b);
